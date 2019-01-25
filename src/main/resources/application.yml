@@ -1,0 +1,23 @@
+eureka: 
+  client: 
+    service-url: 
+      #指定的注册中心
+      defaultZone: http://localhost:1111/eureka/
+  instance:
+    hostname: 192.168.100.104
+    ip-address: ${eureka.instance.hostname}:${server.port}
+    #声明以IP地址进行注册到服务中心
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ipAddress}:${server.port}
+#端口号
+server:
+  port: 1200
+
+#服务名
+spring:
+  application:
+    name: SpringCloud-ServiceProvider
+  
+
+      
+    
